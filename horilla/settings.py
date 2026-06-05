@@ -142,8 +142,8 @@ else:
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'horilla',       # database name
-#         'USER': 'postgres',          # postgres user
-#         'PASSWORD': 'cool',  # user password
+#         'USER': 'horilla_user',          # postgres user
+#         'PASSWORD': 'password',  # user password
 #         'HOST': 'localhost',       # or IP address
 #         'PORT': '5432',            # default postgres port
 #     }
