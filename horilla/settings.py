@@ -14,6 +14,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from os.path import join
 from pathlib import Path
+import os
+DATABASE_URL = os.environ.get('DATABASE_URL')
 
 import environ
 from django.contrib.messages import constants as messages
@@ -138,16 +140,26 @@ else:
         }
     }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'horilla',       # database name
-#         'USER': 'horilla_user',          # postgres user
-#         'PASSWORD': 'password',  # user password
-#         'HOST': 'localhost',       # or IP address
-#         'PORT': '5432',            # default postgres port
-#     }
-# }
+import dj_database_url
+import os
+
+DATABASE_URL = os.environ.get('DATABASE_URL')
+
+if DATABASE_URL:
+    DATABASES = {
+        'default': dj_database_url.config(default=DATABASE_URL)
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'horilla',
+            'USER': 'horilla_user',
+            'PASSWORD': 'password',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
 
 
 # Password validation
