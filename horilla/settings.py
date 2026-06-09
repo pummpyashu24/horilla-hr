@@ -155,7 +155,7 @@ else:
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'horilla',
             'USER': 'horilla_user',
-            'PASSWORD': 'password',
+            'PASSWORD': 'Jagrit@47818',
             'HOST': 'localhost',
             'PORT': '5432',
         }
